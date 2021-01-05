@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  v2ray:
+    image: v2ray/official:latest
+    restart: unless-stopped
+    command: v2ray -config=/etc/v2ray/config.json
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./config:/etc/v2ray
+      - ./log:/var/log/v2ray
