@@ -17,4 +17,3 @@ services:
       - ./config.json:/opt/v2ray/config.json
       - ./log:/var/log/v2ray
 
-
