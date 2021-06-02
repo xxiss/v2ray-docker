@@ -5,17 +5,17 @@
     "loglevel": "warning"
   },
   "inbounds": [{
-    "port": 8001,
+    "port": 1080,
     "listen": "0.0.0.0",
-    "protocol": "vmess",
+    "protocol": "vless",
     "settings": {
       "clients": [
         {
           "id": "ef3af0c2-33fd-4d99-baad-de694f305d8f",
-          "level": 1,
-          "alterId": 64
+          "level": 1
         }
-      ]
+      ],
+      "decryption": "none"
     },
     "streamSettings": {
       "network": "ws",
