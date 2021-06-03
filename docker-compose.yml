@@ -6,14 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
-    logging:
-      driver: json-file
-      options:
-        max-size: 5m
-        max-file: "1"
     ports:
       - "${HTTP_PORT:-1080:1080}"
     volumes:
-      - ./config.json:/opt/v2ray/config.json
+      - ./config:/etc/v2ray
       - ./log:/var/log/v2ray
 
