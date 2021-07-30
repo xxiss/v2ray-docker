@@ -8,7 +8,7 @@ RUN wget -O v2ray-linux-64.zip https://github.com/v2fly/v2ray-core/releases/down
     rm -f v2ray-linux-64.zip &&\
     mkdir /etc/v2ray
 RUN printf "#!/bin/sh \n\
-if [ ! -d /etc/v2ray/config.json ]; then \n  cp /opt/v2ray/config.json /etc/v2ray \nfi \n\
+if [ ! -f /etc/v2ray/config.json ]; then \n  cp /opt/v2ray/config.json /etc/v2ray \nfi \n\
 v2ray -config=/etc/v2ray/config.json" > entrypoint.sh && chmod +x entrypoint.sh
 
 CMD ./entrypoint.sh
